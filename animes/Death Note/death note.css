@@ -1,0 +1,3336 @@
+body{
+	font-family: verdana;
+	color: #fff;
+	background-color: #000;
+}
+
+.barra-de-navegacion{
+	display: flex;
+	position: relative;
+	z-index: 560;
+	padding-left: 50px;
+	padding-top: 20px;
+	transform: translateY(-754px);
+	height: 70px;
+	width: 100%;
+	
+}
+.position-fixed{
+	animation: animacionBDN .5s forwards;
+	height: 65px;
+	background: linear-gradient(to top, #000, #500);
+	
+}
+
+@keyframes animacionBDN{
+	0%{
+		margin-top: -40px;
+		position: fixed;
+		z-index: 565;
+	}
+
+	70%{
+		height: 75px;
+	}
+
+	100%{
+		margin-top: -7px;
+		position: fixed;
+		z-index: 565;
+	}
+}
+
+.logo{
+	display: flex;
+}
+
+.letra-1{
+	color: #500;
+	font-family: Carter One, impact;
+	font-size: 70px;
+	transform: translateY(-30px);
+	margin-right: 8px;
+}
+
+.letra-2{
+	font-family: Carter One, impact;
+}
+
+.letra-3{
+	color: #500;
+	font-family: Carter One, impact;
+	margin-left: 8px;
+	font-size: 35px;
+	transform: translateY(-5px);
+}
+
+.opciones-de-barra{
+	display: flex;
+	margin-left: 10px;
+}
+
+.opciones-de-barra button{
+	margin: 5px 10px;
+	text-align: center;
+	background-color: inherit;
+	border: none;
+	font-family: verdana;
+	padding: 0px 8px;
+	height: 20px;
+	color: #fff;
+	position: relative;
+	font-size: 13px;
+}
+
+.opciones-de-barra button:hover{
+	cursor: pointer;
+	color: #fd0;
+}
+
+.pelicula{
+	margin: 100px;
+}
+
+/*INPUT*/
+.input{
+	display: flex;
+	flex-direction: column;
+	transform: translateX(100px);
+	width: 250px;
+	height: 50px;
+}
+
+.input input{
+	font-size: 12px;
+	border-radius: 50px;
+	height: 30px;
+	width: 230px;
+	background-color: #533;
+	border: 1px solid #600;
+	outline: none;
+	padding: 10px;
+	color: #ddd;
+}
+
+.boton-buscar button{
+	width: 15px;
+	height: 15px;
+	background: inherit;
+	border: none;
+	margin-left: 193px;
+	transform: translateY(-203px);
+	font-size: 25px;
+	color: #400;
+}
+
+.boton-buscar button:hover{
+	cursor: pointer;
+}
+
+.input input:focus{
+	outline: 1px solid #fd0;
+}
+.input input::placeholder{
+	font-family: segoe UI;
+	font-size: 13px;
+}
+/*vENTANA DE BUSQUEDA DE SERIES DEL INPUT*/
+.lista-de-series{
+	text-align: center;
+	visibility: hidden;
+	color: #f07;
+	height: 170px;
+	width: 220px;
+	margin-top: 10px;
+	background-color: #400;
+	border-radius: 5px;
+}
+
+.item-ul{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	overflow-y: scroll;
+	height: 150px;
+	width: 210px;
+	
+}
+
+
+.item-ul::-webkit-scrollbar{
+	width: 10px;
+	height: 10px;
+}
+
+.item-ul::-webkit-scrollbar-thumb{
+	background-color: #fd0a;
+	border-radius: 2px;
+}
+
+.item-ul::-webkit-scrollbar-thumb:hover{
+	background-color: #800;
+}
+
+.item-ul::-webkit-scrollbar-thumb:active{
+	background-color: #fd0;
+}
+
+.item-ul::-webkit-scrollbar-track{
+	background-color: #000;
+	border-radius: 2px;
+	margin: 5px;
+}
+
+.lista-de-series:hover{
+	visibility: visible;
+}
+
+.lista-de-series button{
+	border: none;
+	width: 185px;
+	height: 60px;
+	color: #fff;
+	background: linear-gradient(to right, #000, #400);
+	padding: 0px 15px;
+	font-size: 11px;
+	padding: 5px;
+	margin: auto;
+	text-align: left;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.lista-de-series button:hover{
+	cursor: pointer;
+	animation: animacionUl .5s forwards;
+}
+
+@keyframes animacionUl{
+	0%{
+
+	}
+
+	100%{
+		color: #fd0;
+	}
+}
+
+.series{
+	display: flex;
+}
+
+.img-ul{
+	width: 26%;
+	height: 45px;
+	margin-right: 10px;
+}
+
+.text-ul{
+	width: 74%;
+	margin-top: 6px;
+}
+
+.series img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 3px;
+}
+
+
+.input-buscador:focus-within + ul{
+	animation: desplayblock .3s forwards;
+	visibility: visible;
+}
+
+@keyframes desplayblock{
+	0%{
+		transform: scale(.9);
+		
+
+	}
+
+	80%{
+		transform: scale(1.1)
+	}
+
+	100%{
+		transform: scale(1)
+	}
+}
+
+
+.filtro{
+	display: none;
+}
+
+
+/*VENTANAS DE BARRA DE NAVEGACION*/
+.div-1, .div-2, .div-3{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.ventanas{
+	transform: translateY(-778px);
+	display: flex;
+	position: relative;
+	z-index: 570;
+	width: 60%;
+	margin-left: 365px;
+	
+
+}
+.ventana-fixed{
+	transform: translateY(-715px);
+	position: fixed;
+
+}
+
+.ventana-1{
+	display: none;
+	width: 170px;
+	background-color: #400;
+	color: #fff;
+	padding-bottom: 20px;
+	padding-top: 5px;
+	position: relative;
+	z-index: 570;
+	
+	height: 220px;
+	border-radius: 5px;
+
+	}
+
+.ventana-2{
+	display: none;
+	width: 170px;
+	background-color: #400;
+	color: #fff;
+	padding-bottom: 20px;
+	padding-top: 5px;
+	position: relative;
+	z-index: 570;
+	margin-left: 110px;
+	border-radius: 5px;
+	
+} 
+
+.aumentar-1{
+	display: block;
+	animation: aumentar .3s forwards;
+}
+.aumentar-2{
+	display: block;
+	animation: aumentar .3s forwards;
+}
+
+@keyframes aumentar{
+	0%{
+		transform: scale(.9);
+	}
+
+	80%{
+		transform: scale(1.1);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+
+.ventana-1 button, .ventana-2 button{
+	width: 80%;
+	position: relative;
+	border: none;
+	background: inherit;
+	color: #fff;
+	margin: 0px 10px;
+	font-size: 10px;
+	text-align: left;
+	font-family: verdana;
+	padding-left: 10px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-radius: 5px;
+
+}
+
+
+
+.ventana-1 button:hover, .ventana-2 button:hover, .ventana-3 button:hover{
+	animation: animacionBoton .4s forwards;
+	cursor: pointer;
+	visibility: visible;
+}
+
+@keyframes animacionBoton{
+	0%{
+
+	}
+
+	100%{
+		background-color: #0005;
+		color: #fd0;
+	}
+} 
+
+.ventana-1 button:focus, .ventana-2 button:focus, .ventana-3 button:focus{
+	background-color: #000;
+	color: #fff;
+	border: 1px solid #fd0;
+}
+
+
+.informacion{
+	display: flex;
+	margin: 0px 70px;
+	transform: translateY(100px);
+	margin-bottom: 120px; 
+}
+
+.foto-poster{
+	width: 20%;
+	height: 230px;
+	background: linear-gradient(70deg, #000, #a00);
+	border-radius: 5px;
+}
+
+.foto-poster img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.informacion-de-anime{
+	margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+}
+
+.informacion-de-anime h2{
+ 	font-size: 30px;
+ 	font-family: Carter One, verdana;
+}
+
+.informacion-de-anime p:nth-child(5){
+ 	padding: 0px 0px;
+ 	font-family: segoe UI;
+ 	font-size: 14px;
+}
+
+.informacion-de-anime p:nth-child(2){
+ 	padding: 10px 0px;
+ 	font-family: segoe UI;
+ 	font-size: 14px;
+}
+
+.informacion-de-anime p:nth-child(3){
+ 	padding: 5px 0px;
+ 	font-family: segoe UI;
+ 	font-size: 14px;
+ 	
+}
+
+.informacion-de-anime p:nth-child(4){
+ 	padding: 5px 0px;
+ 	font-family: segoe UI;
+ 	font-size: 14px;
+}
+
+
+
+/*FLECHAS DE PORTADA*/
+.botones-portada{
+	position: relative;
+	transform: translateY(-195px);
+	z-index: 400;
+}
+
+.botones-portada button{
+	background-color: #f00;
+	padding-top: 8px;	
+	font-size: 30px;
+	background: inherit;
+	border: none;
+	border-radius: 30px;
+	text-align: center;
+	color: #fff;
+}
+
+.botones-portada button:nth-child(1){
+	transform: translateX(10px);
+}
+
+.botones-portada button:hover{
+	cursor: pointer;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #400;
+	color: #fd0;
+	
+}
+
+.botones-portada button:nth-child(2){
+	transform: translateX(910px);
+}
+
+.portada-container{
+	overflow: hidden;
+
+	width: 1010px;
+	height: 350px;
+}
+
+.imagen-portada{
+	display: flex;
+	width: 1010px;
+	height: 570px;
+}
+
+.imagen-portada img{
+	height: 100%;
+	width: 100%;
+	filter: brightness(.9);
+}
+
+
+/*ANIMACIONES PARA DESPLAZAR*/
+.desplazamiento-1 img:nth-child(1){
+	animation: avanzara 1s forwards;
+}
+
+.desplazamiento-2 img:nth-child(1){
+	animation: avanzarb 1s forwards;
+}
+
+.desplazamiento-3 img:nth-child(1){
+	animation: avanzarc 1s forwards;
+}
+
+.desplazamiento-4 img:nth-child(1){
+	animation: avanzard 1s forwards;
+}
+
+@keyframes avanzara {
+	0%{
+		margin-left: 0%;
+	}
+
+	100%{
+		margin-left: -100%;
+	}
+}
+
+@keyframes avanzarb {
+	0%{
+		margin-left: 0%;
+	}
+
+	100%{
+		margin-left: -100%;
+	}
+}
+
+@keyframes avanzarc {
+	0%{
+		margin-left: 0%;
+	}
+
+	100%{
+		margin-left: -100%;
+	}
+}
+
+@keyframes avanzard {
+	0%{
+		margin-left: 0%;
+	}
+
+	100%{
+		margin-left: -100%;
+	}
+}
+
+
+.retrocesoa img:nth-child(1){
+	animation: retrocedera 1s forwards;
+}
+
+.retrocesob img:nth-child(1){
+	animation: retrocederb 1s forwards;
+}
+
+.retrocesoc img:nth-child(1){
+	animation: retrocederc 1s forwards;
+}
+
+.retrocesod img:nth-child(1){
+	animation: retrocederd 1s forwards;
+}
+
+
+.posicion-de-imagen img:nth-child(2){
+	transform: translateX(-200%);
+}
+
+
+
+@keyframes retrocedera {
+	0%{
+		margin-left: 0%;
+	}
+
+	100%{
+		margin-left: 100%;
+	}
+}
+
+@keyframes retrocederb {
+	0%{
+		margin-left: 0%;
+	}
+
+	100%{
+		margin-left: 100%;
+	}
+}
+
+@keyframes retrocederc {
+	0%{
+		margin-left: 0%;
+	}
+
+	100%{
+		margin-left: 100%;
+	}
+}
+
+@keyframes retrocederd {
+	0%{
+		margin-left: 0%;
+	}
+
+	100%{
+		margin-left: 100%;
+	}
+}
+
+.sombra1{
+	background: linear-gradient(to top, transparent, #000);
+	height: 130px;
+	width: 100%;
+	position: relative;
+	z-index: 380;
+	transform: translateY(-600px);
+}
+
+.sombra2{
+	background: linear-gradient(to bottom, transparent, #000);
+	height: 130px;
+	width: 100%;
+	position: relative;
+	z-index: 380;
+	transform: translateY(-430px);
+}
+.puntos{
+	display: flex;
+	flex-direction: row;
+	margin-left: 440px;
+	
+	width: 100px;
+	justify-content: center;
+	transform: translateY(-65px);
+	position: relative;
+	z-index: 500;
+	}
+
+.punto-1, .punto-2, .punto-3, .punto-4{
+	border-radius: 50px;
+	height: 8px;
+	width: 8px;
+	background-color: #8aa;
+	margin: 5px;
+
+}
+
+.punto-1-a{
+	animation-name: agrandamiento;
+	animation-duration: .8s;
+	animation-fill-mode: forwards;
+}
+
+.punto-1-e{
+	animation-name: encogimiento;
+	animation-duration: .6s;
+	animation-fill-mode: forwards;
+}
+
+.punto-2-a{
+	animation-name: agrandamiento;
+	animation-duration: .8s;
+	animation-fill-mode: forwards;
+}
+
+.punto-2-e{
+	animation-name: encogimiento;
+	animation-duration: .6s;
+	animation-fill-mode: forwards;
+}
+
+.punto-3-a{
+	animation-name: agrandamiento;
+	animation-duration: .8s;
+	animation-fill-mode: forwards;
+}
+
+.punto-3-e{
+	animation-name: encogimiento;
+	animation-duration: .6s;
+	animation-fill-mode: forwards;
+}
+
+.punto-4-a{
+	animation-name: agrandamiento;
+	animation-duration: .8s;
+	animation-fill-mode: forwards;
+}
+
+.punto-4-e{
+	animation-name: encogimiento;
+	animation-duration: .6s;
+	animation-fill-mode: forwards;
+}
+
+
+@keyframes agrandamiento {
+	0%{
+		background-color: #8aa;
+	}
+
+	100%{
+		transform: scale(1.7);
+		background-color: #400;
+	}
+}
+
+@keyframes encogimiento{
+	0%{
+		transform: scale(1.7);
+		background-color: #400;
+	}
+
+	100%{
+		transform: scale(1);
+		background-color: #8aa;
+	}
+}
+
+
+.supremo{
+	display: flex;
+	margin: 0px 100px 0px 0px;
+
+}
+
+/*REDES SOCIALES*/
+.container-redes-sociales{
+	width: 11.3%;
+	top: 0;
+	position: sticky;
+	z-index: 100;
+
+}
+.redes-sociales{
+	display: flex;
+	flex-direction: column;
+	
+	padding-left: 11px;
+	border-left: 1px solid #fd0;
+	transform: translateX(25px);
+	
+}
+.redes-sociales img{
+	width: 35px;
+	height: 35px;
+	margin-top: 7px;
+}
+
+.redes-sociales img:hover{
+	animation: agrandarRedes .3s forwards;
+	cursor: pointer;
+}
+
+@keyframes agrandarRedes{
+	0%{
+
+	}
+
+	80%{
+		transform: scale(1.4);
+	}
+	100%{
+		transform: scale(1.3);
+	}
+}
+
+.titulo-redes{
+	display: none;
+}
+
+.main{
+	margin: 0px 30px 100px 0px;
+	
+	width: 64%;
+}
+
+.main h2{
+	font-size: 35px;
+}
+
+.div-grid-h2{
+	width: 100%;
+	border-bottom: 1px solid #fd0;
+}
+
+.div-grid-h2 h2{
+	margin-bottom: 5px;
+	text-shadow: 0.1em 0.1em #900;
+	font-family: Carter One, verdana;
+}
+
+.container-superior-temporadas{
+	margin-bottom: 40px;
+}
+
+.container-info-temporadas{
+	display: flex;
+	margin: 10px 0px;
+}
+
+.poster-temporada{
+	width: 30%;
+	height: 250px;
+	background: linear-gradient(70deg, #000, #a00);
+	border-radius: 5px;
+}
+
+.poster-temporada img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.info-temporada{
+	width: 70%;
+	margin-left: 10px;
+}
+
+.info-temporada h3{
+	border-bottom: 1px solid #fd0;
+	font-size: 24px;
+	margin-bottom: 15px;
+	padding-bottom: 5px;
+	color: #900;
+	text-shadow: 0 0 0.2em #fff;
+	font-family: Carter One, verdana;
+}
+
+.info-temporada p{
+	padding-left: 5px;
+	padding-top: 5px;
+	font-size: 13px;
+	font-family: segoe UI semibold;
+	background: linear-gradient(to left, transparent, #400);
+	
+	
+}
+
+.info-temporada p:nth-child(3){
+	border-bottom: 1px solid #fd0;
+	padding-bottom: 5px;
+	margin-bottom: 14px;
+}
+
+.info-temporada p:nth-child(5){
+	border-bottom: 1px solid #fd0;
+	padding-bottom: 5px;
+	margin-bottom: 14px;
+}
+
+.info-temporada p:nth-child(7){
+	border-bottom: 1px solid #fd0;
+	padding-bottom: 5px;
+	margin-bottom: 14px;
+}
+
+.info-temporada button{
+	background-color: #70c;
+	color: #fff;
+	font-family: verdana;
+	padding: 5px 30px;
+	border-radius: 4px;
+	border: none;
+	font-size: 12px;
+}
+
+.info-temporada button:hover{
+	animation-name: descargarhover;
+	animation-duration: .3s;
+	animation-fill-mode: forwards;
+	cursor: pointer;
+	
+}
+
+@keyframes descargarhover{
+	0%{
+		
+	}
+
+	100%{
+		background-color: #70c4; 
+		color: #fd0;
+	}
+}
+
+.info-temporada button:focus{
+	border: 1px solid #fff;
+	background: inherit;
+	color: #f07;
+}
+
+.pie-de-temporada p{
+	padding-left: 5px;
+	padding-top: 5px;
+	font-size: 13px;
+	font-family: segoe UI semibold;
+	background: linear-gradient(to left, transparent, #400);
+}
+
+.pie-de-temporada b{
+	color: #fd0;
+}
+
+.pie-de-temporada p:nth-child(3){
+	border-bottom: 1px solid #fd0;
+	padding-bottom: 5px;
+	margin-bottom: 12px;
+	color: #0bf;
+	font-size: 15px;
+}
+
+
+
+/*ASIDE*/
+.aside{
+	margin-left: 10px;
+	width: 24%;
+}
+
+.aside button{
+	width: 100%;
+	padding: 10px 3px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	background-color: #300;
+	font-family: verdana;	
+	color: #fff;
+}
+
+.aside-2 {
+	color: #aaa;
+	
+}
+
+.aside-1 button:hover{
+	cursor: pointer;
+	background-color: #900;
+	color: #fd0;
+
+}
+
+.aside-1 button:focus{
+	border: 1px solid #fd0;
+	background-color: #000;
+	color: #fff;
+
+}
+
+.imagen-aside{
+	width: 100%;
+}
+
+.imagen-aside img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+}
+
+.boton-estrenos button{
+	width: 100%;
+	height: 40px;
+	background-color: #fff3;
+	color: #8bb;
+}
+
+.contenedor-grid-aside{
+	margin: 5px 0px 5px 5px;
+	font-family: arial;
+	
+}
+
+.grid-aside{
+	display: grid;
+	grid-template-columns: 35% 65%;
+	grid-template-rows: 110px;
+	margin-bottom: 20px;
+}
+
+
+.titulo-aside a{
+	text-decoration: none;
+	font-size: 17px;
+	color: #fff;
+}
+
+.column-1 img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.div-posicion{
+	transform: translateY(-110px);
+	position: relative;
+	margin-left: -15px;
+}
+
+.column-1 b{
+	background-color: #a00;
+	color: #fff;
+	padding: 7px 7px; 
+	border-radius: 50px;
+	outline: 5px solid #000;
+	font-size: 15px;
+}
+
+.column-2{
+	margin-left: 10px;
+}
+
+.informacion-2{
+	display: flex;
+	font-size: 12px;
+	margin: 8px 0px;
+}
+
+.informacion-2 p:nth-child(1){
+	color: #fd0;
+}
+
+.informacion-2 p{
+	margin-right: 9px;
+	color: #999;
+}
+
+.calidad-grid{
+	background-color: #fd0;
+	color: #000;
+	width: 45px;
+	height: 13px;
+	border-radius:10px;
+	font-size: 12px;
+	text-align: center;
+	padding: 3px;
+}
+
+
+.sub-item-aside img{
+	animation: animacionSeriesImg .3s forwards;
+	cursor: pointer;
+	
+}
+
+.sub-item-aside a{
+	animation: animacionSeries .3s forwards;
+	cursor: pointer;
+	
+}
+
+
+@keyframes animacionSeries{
+	0%{
+
+	}
+	100%{
+		color: #c00;
+		text-shadow: 0 0 0.5em #c00;
+
+	}
+}
+@keyframes animacionSeriesImg {
+	0%{
+
+	}
+
+	100%{
+		
+		transform: scale(1.2);
+	}
+}
+
+.parrafo-final{
+	font-size: 14px;
+	border-left: 2px solid #900;
+	padding: 5px;
+	margin-left: 100px;
+	width: 575px;
+	transform: translateY(-100px);
+}
+
+.parrafo-final p{
+	font-family: kaushan Script, verdana;
+}
+
+
+
+/*FOOTER*/
+.footer{
+	height: 150px;
+	background-color: #300;
+	
+}
+
+.logo-de-cuevana{
+	transform: translateY(30px);
+}
+
+.footer-parrafo{
+	text-align: center;
+	font-family: verdana;
+	color: #b00;
+	font-size: 15px;
+}
+
+.iconos-de-footer{
+	display: flex;
+	transform: translateX(750px);
+	margin-top: -60px;
+}
+
+.iconos-de-footer img{
+	
+	margin-right: 30px;
+	width: 35px;
+	height: 35px;
+	
+}
+.iconos-de-footer img:hover{
+	animation: agrandarIconos .3s forwards;
+	cursor: pointer;
+}
+
+@keyframes agrandarIconos{
+	0%{
+
+	}
+
+	80%{
+		transform: scale(1.3);
+
+
+	}
+
+	100%{
+		transform: scale(1.2);
+		filter: invert(70%)
+		
+	}
+}
+
+
+
+
+
+/*RESPONSIVE DE PANTALLAS ultra 1440PX*/
+	/*RESPONSIVE DE PANTALLAS ultra 1440PX*/
+	/*RESPONSIVE DE PANTALLAS ultra 1440PX*/
+	/*RESPONSIVE DE PANTALLAS ultra 1440PX*/
+	/*RESPONSIVE DE PANTALLAS ultra 1440PX*/
+	/*RESPONSIVE DE PANTALLAS ultra 1440PX*/
+	/*RESPONSIVE DE PANTALLAS ultra 1440PX*/
+	@media only screen and (max-width: 1600px) and (min-width: 1110px){
+
+		.barra-de-navegacion{
+			width: 1440px;
+			transform: translateY(-1108px);
+			height: 90px;
+		}
+		.letra-1{
+			font-size: 80px;
+			transform: translateY(-25px);
+			margin-right: 8px;
+		}
+
+		.letra-2{
+			font-size: 40px;
+		}
+
+		.letra-3{
+			margin-left: 8px;
+			font-size: 50px;
+			transform: translateY(-5px);
+		}
+
+		.opciones-de-barra{
+			display: flex;
+			margin-left: 15px;
+		}
+
+		.opciones-de-barra button{
+			margin: 10px 15px;
+			padding: 0px 8px;
+			height: 20px;
+			font-size: 20px;
+		}
+
+		.selector-one i, .selector-two i{
+			font-size: 17px;
+			margin-left: 4px;
+		}
+	
+
+		.ventanas{
+			transform: translateY(-1140px);
+			margin-left: 295px;
+		}
+		.ventana-fixed{
+			transform: translateY(-1063px);
+		}
+
+		.ventana-1{
+			width: 200px;
+			padding-bottom: 20px;
+			padding-top: 5px;
+			height: 290px;
+			margin-left: 220px;
+		}
+
+		.ventana-2{
+			width: 200px;
+			padding-bottom: 20px;
+			padding-top: 5px;
+			height: 220px;
+			margin-left: 380px;
+			
+		} 
+
+	
+	.ventana-1 button, .ventana-2 button, .ventana-3 button{
+		font-size: 13px;
+		padding-left: 10px;
+		padding-top: 9px;
+		padding-bottom: 9px;
+	}
+		.input{
+			transform: translateX(220px);
+			margin-top: 5px;
+		}
+
+	.input input{
+		font-size: 12px;
+		height: 50px;
+		width: 280px;
+		padding: 10px;
+		
+	}
+	
+	.input input::placeholder{
+		font-family: segoe UI;
+		font-size: 16px;
+	}
+
+
+	.boton-buscar button{
+		margin-left: 240px;
+		transform: translateY(-232px);
+		font-size: 28px;
+		
+	}
+
+	.lista-de-series{
+		height: 210px;
+		width: 270px;
+		margin-top: 10px;
+		
+	}
+
+	.item-ul{
+		margin-top: 5px;
+		margin-bottom: 10px;
+		height: 170px;
+		width: 260px;
+	}
+	.lista-de-series button{
+		width: 245px;
+		height: 70px;
+		padding: 0px 15px;
+		font-size: 14px;
+		padding: 5px;
+		margin-bottom: 10px;
+	}
+
+	.img-ul{
+		width: 26%;
+		height: 55px;
+		margin-right: 10px;
+	}
+
+	.text-ul{
+		width: 74%;
+		margin-top: 8px;
+	}
+
+	.series img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 3px;
+	}
+
+	.informacion{
+	display: flex;
+	margin: 0px 70px;
+	transform: translateY(100px);
+	margin-bottom: 120px; 
+}
+
+.foto-poster{
+	width: 20%;
+	height: 400px;
+	background: linear-gradient(70deg, #000, #a00);
+	border-radius: 5px;
+}
+
+.foto-poster img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.informacion-de-anime{
+	margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+}
+
+.informacion-de-anime h2{
+ 	font-size: 50px;
+ 	font-family: Carter One, verdana;
+}
+
+.informacion-de-anime p:nth-child(5){
+ 	padding: 0px 0px;
+ 	font-family: segoe UI;
+ 	font-size: 20px;
+}
+
+.informacion-de-anime p:nth-child(2){
+ 	padding: 10px 0px;
+ 	font-family: segoe UI;
+ 	font-size: 20px;
+}
+
+.informacion-de-anime p:nth-child(3){
+ 	padding: 5px 0px;
+ 	font-family: segoe UI;
+ 	font-size: 20px;
+ 	
+}
+
+.informacion-de-anime p:nth-child(4){
+ 	padding: 5px 0px;
+ 	font-family: segoe UI;
+ 	font-size: 20px;
+}
+	
+	.sombra1{
+		
+		transform: translateY(-890px);
+	}
+
+	.sombra2{
+	
+		transform: translateY(-530px);
+	}
+	.puntos{
+		margin-left: 650px;
+		width: 150px;
+		transform: translateY(-110px);
+	}
+
+	.punto-1, .punto-2, .punto-3, .punto-4{
+		height: 13px;
+		width: 13px;
+		margin: 8px;
+
+	}
+		.botones-portada{
+			transform: translateY(-280px);
+		}
+
+		.botones-portada button:nth-child(2){
+			transform: translateX(1340px);
+		}
+
+		.portada-container{
+			width: 1440px;
+			height: 520px;
+		}
+
+		.imagen-portada{
+			width: 1440px;
+			height: 840px;
+		}
+
+		.imagen-portada img{
+		
+			width: 100%;
+			height: 100%;
+		}
+
+		
+	.titulo-del-grid{
+		height: 60px;
+		margin: 0px 130px;
+		margin-left: 150px;
+		font-size: 25px;
+	}
+
+
+
+
+
+
+	/*REDES SOCIALES*/
+	
+	.redes-sociales img{
+		width: 55px;
+		height: 55px;
+		margin-top: 7px;
+	}
+
+	
+		
+		
+		.supremo{
+			width: 1340px;
+
+		}
+		.main{
+			width: 63%;
+		}
+
+		
+.div-grid-h2 h2{
+	margin-bottom: 5px;
+}
+
+.container-superior-temporadas{
+	margin-bottom: 40px;
+}
+
+.container-info-temporadas{
+	margin: 10px 0px;
+}
+
+.poster-temporada{
+	width: 30%;
+	height: 350px;
+}
+
+
+.info-temporada{
+	width: 70%;
+	margin-left: 10px;
+}
+
+.info-temporada h3{
+	font-size: 35px;
+	margin-bottom: 15px;
+	padding-bottom: 5px;
+}
+
+.info-temporada p{
+	padding-left: 5px;
+	padding-top: 5px;
+	font-size: 20px;
+}
+
+.info-temporada p:nth-child(3){
+	padding-bottom: 5px;
+	margin-bottom: 21px;
+}
+
+.info-temporada p:nth-child(5){
+	padding-bottom: 5px;
+	margin-bottom: 21px;
+}
+
+.info-temporada p:nth-child(7){
+	padding-bottom: 5px;
+	margin-bottom: 21px;
+}
+
+.info-temporada button{
+	padding: 5px 20px;
+	font-size: 19px;
+}
+
+
+
+
+.pie-de-temporada p{
+	padding-left: 5px;
+	padding-top: 5px;
+	font-size: 21px;
+}
+
+
+.pie-de-temporada p:nth-child(3){
+	padding-bottom: 5px;
+	margin-bottom: 12px;
+	font-size: 23px;
+}
+
+	.aside{
+		margin-left: 10px;
+		width: 22%;
+	}
+
+	.aside button{
+		width: 100%;
+		padding: 10px 3px;
+		margin-bottom: 5px;
+		font-size: 16px;
+	}
+
+	.aside-2 {
+		color: #aaa;
+		
+	}
+
+	
+	.imagen-aside{
+		width: 97%;
+		height: 230px;
+		margin-bottom: 5px;
+		
+	}
+
+	
+	.boton-estrenos button{
+		width: 100%;
+		height: 40px;
+		
+	}
+
+	.contenedor-grid-aside{
+		margin: 5px 0px 5px 5px;
+		
+		
+	}
+
+	.grid-aside{
+		display: grid;
+		grid-template-columns: 35% 65%;
+		grid-template-rows: 150px;
+		margin-bottom: 20px;
+	}
+
+
+	.titulo-aside a{
+		font-size: 22px;
+	}
+
+	
+
+	.div-posicion{
+		transform: translateY(-150px);
+		position: relative;
+		margin-left: -15px;
+	}
+
+	.column-1 b{
+		padding: 7px 7px; 
+		font-size: 20px;
+	}
+
+	.column-2{
+		margin-left: 10px;
+	}
+
+	.informacion-2{
+		font-size: 17px;
+		margin: 14px 0px;
+	}
+
+	
+	.informacion-2 p{
+		margin-right: 9px;
+	}
+
+	.calidad-grid{
+		width: 50px;
+		height: 30px;
+		font-size: 14px;
+		padding: 5px;
+	}
+
+		.parrafo-final{
+			border-left: 4px solid #400;
+			margin-left: 150px;
+			width: 850px;
+			font-size: 20px;
+			
+		}
+		
+		
+		.footer{
+			width: 1440px;
+
+		}
+
+		.footer-parrafo p{
+			font-size: 25px;
+		}
+	.iconos-de-footer{
+	
+		transform: translateX(1100px);
+		margin-top: -80px;
+	}
+
+	.iconos-de-footer img{
+		width: 60px;
+		height: 60px;
+	}
+		
+		
+}
+
+
+	/*RESPONSIVE DE PANTALLAS 16:9 800PX*/
+	/*RESPONSIVE DE PANTALLAS 16:9 800PX*/
+	/*RESPONSIVE DE PANTALLAS 16:9 800PX*/
+	/*RESPONSIVE DE PANTALLAS 16:9 800PX*/
+	/*RESPONSIVE DE PANTALLAS 16:9 800PX*/
+	/*RESPONSIVE DE PANTALLAS 16:9 800PX*/
+	/*RESPONSIVE DE PANTALLAS 16:9 800PX*/
+	@media only screen and (max-width: 1100px) and (min-width: 1020px){
+
+		.barra-de-navegacion{
+			width: 1024px;
+		}
+		
+		
+		
+
+		.portada-container{
+			width: 1024px;
+			
+		}
+
+		.imagen-portada{
+			width: 1024px;
+			height: 584px;
+			
+		}
+		.pelicula{
+			margin: 100px;
+			margin-right: 90px;
+		}
+
+	.sombra1{
+		transform: translateY(-650px);
+	}
+
+	
+
+		.botones-portada button:nth-child(2){
+			transform: translateX(920px);
+		}
+
+
+		.titulo-del-grid{
+			margin-right: 90px;
+		}
+
+		.supremo{
+			margin: 0px 90px 0px 0px;
+		}
+
+		.grid-container{
+			grid-row-gap: 15px; 
+		
+		}
+		.aside{
+			margin-left: 20px;
+			width: 24%;
+		}
+
+		.parrafo-final{
+			width: 585px;
+		}
+}
+
+
+
+
+/*RESPONSIVE DE PANTALLAS 4:3 800PX*/
+/*RESPONSIVE DE PANTALLAS 4:3 800PX*/
+/*RESPONSIVE DE PANTALLAS 4:3 800PX*/
+/*RESPONSIVE DE PANTALLAS 4:3 800PX*/
+/*RESPONSIVE DE PANTALLAS 4:3 800PX*/
+/*RESPONSIVE DE PANTALLAS 4:3 800PX*/
+/*RESPONSIVE DE PANTALLAS 4:3 800PX*/
+@media only screen and (max-width: 800px) and (min-width: 500px){
+	.barra-de-navegacion{
+		
+		width: 800px;
+		transform: translateY(-705px);
+	}
+	.ventanas{
+	display: inline-flex;
+	transform: translateY(-729px);
+	position: relative;
+	z-index: 570;
+	margin-left: 295px;
+}
+.ventana-fixed{
+	transform: translateY(-666px);
+	position: fixed;
+
+}
+
+.ventana-2{
+	margin-left: 108px;
+	
+	
+} 
+
+.letra-1{
+	font-size: 70px;
+	transform: translateY(-30px);
+	margin-right: 8px;
+}
+
+
+
+.letra-3{
+	margin-left: 8px;
+	font-size: 35px;
+	transform: translateY(-5px);
+}
+
+.opciones-de-barra{
+	display: flex;
+	margin-left: 10px;
+}
+
+.opciones-de-barra button{
+	margin: 5px 0px;
+	padding: 0px 8px;
+	font-size: 12px;
+}
+
+
+	.portada-container{
+		width: 800px;
+		height: 300px;
+	}
+	.imagen-portada{
+		display: flex;
+		width: 800px;
+		height: 450px;
+	}
+
+	.imagen-portada img{
+		height: 100%;
+		width: 100%;
+		filter: brightness(.9);
+	}
+	.input{
+		transform: translateX(15px);
+		width: 200px;
+		height: 50px;
+	}
+	.input input{
+	font-size: 12px;
+	height: 30px;
+	width: 190px;
+	padding: 10px;
+	
+}
+
+	.boton-buscar button{
+	
+	margin-left: 153px;
+	transform: translateY(-205px);
+	font-size: 25px;
+	
+	}
+
+	.contenido{
+		width: 800px;
+		transform: translateY(-430px);
+	}
+	.titulo h2{
+		font-size: 35px;
+	
+	}
+
+	.informacion p{
+		font-size: 14px;
+	}
+	.botones-portada{
+		transform: translateY(-175px);
+	}
+
+	.botones-portada button:nth-child(2){
+		transform: translateX(690px);
+	}
+	.botones-portada button:nth-child(1){
+		transform: translateX(0px);
+	}
+	.puntos{
+		transform: translateY(-70px);
+		margin-left: 360px;
+
+	}
+	.sombra1{
+	
+		height: 130px;
+		width: 800px;
+		transform: translateY(-500px);
+	}
+
+	.sombra2{
+		height: 130px;
+		width: 800px;
+		transform: translateY(-380px);
+	}
+	.titulo-del-grid{
+	
+	margin: 0px 0px;
+	margin-left: 80px;
+	margin-right: 50px;
+	font-size: 15px;
+
+	}
+	.aviso-rojo{
+		font-size: 12px;
+	}
+	.aviso-azul{
+		font-size: 12px;
+	}
+	.supremo{
+		width: 750px;
+
+	}
+	.main{
+		width: 61%;
+	}
+
+	.aside{
+ 		width: 28%;
+	}
+	
+
+	
+	
+	.poster-temporada{
+		width: 40%;
+	}
+
+	.info-temporada{
+		width: 60%;
+	}
+	.info-temporada button{
+	padding: 5px 10px;
+	font-size: 12px;
+	margin-bottom: 3px;
+}
+	.parrafo-final{
+		
+		margin-left: 80px;
+		width: 440px;
+		font-size: 13px;
+		
+	}
+	.titulo-aside a{
+		
+		font-size: 15px;
+		
+	}
+
+	.informacion-2 p{
+		margin-right: 7px;
+	}
+	
+	footer{
+		width: 800px;
+	}
+	.iconos-de-footer{
+	display: flex;
+	transform: translateX(550px);
+	margin-top: -60px;
+}
+	
+}
+
+
+/*DISEÑO RESPONSIVE DESIGNE*/
+/*DISEÑO RESPONSIVE DESIGNE*/
+/*DISEÑO RESPONSIVE DESIGNE*/
+/*DISEÑO RESPONSIVE DESIGNE*/
+/*DISEÑO RESPONSIVE DESIGNE*/
+/*DISEÑO RESPONSIVE DESIGNE*/
+/*DISEÑO RESPONSIVE DESIGNE*/
+/*DISEÑO RESPONSIVE DESIGNE*/
+
+
+.barra-de-navegacion-responsive{
+	display: none;
+	height: 50px;
+	background: linear-gradient(to right, #400, #900);
+	width: 425px;
+	transform: translateY(-660px);
+	z-index: 500;
+	position: fixed;
+	border-bottom: .5px solid #999;
+}
+
+.icono-de-barras-responsive i{
+	font-size: 30px;
+}
+
+.icono-de-inicio-responsive{
+	transform: translateX(260px);
+	font-size: 27px;
+	margin-top: 5px;
+	width: 30px;
+	height: 30px;
+	
+}
+
+.icono-de-inicio-responsive img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: invert(100%);
+}
+
+.logo-living-responsive{
+	transform: translateX(95px);
+	font-family: Carter One, verdana;
+	width: 145px;
+	text-align: center;
+	margin-top: 5px;
+}
+.icono-buscar-responsive{
+	transform: translateX(180px);
+}
+.icono-buscar-responsive i{
+	font-size: 30px;
+}
+
+.botones-portada-responsive{
+	display: none;
+}
+
+/*MODAL DE NAVEGACION*/
+.modal{
+	transform: translateY(-660px);
+	width: 340px;
+	height: 450px;
+	z-index: 550;
+	background-color: #000;
+	margin-left: -300px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	font-family: verdana;
+	position: fixed;
+	padding-bottom: 20px;
+	background-color: #111;
+}
+
+	.modal::-webkit-scrollbar{
+	width: 3px;
+	height: 3px;
+	
+	}
+
+	.modal::-webkit-scrollbar-thumb{
+	background-color: #fd0;
+	border-radius: 2px;
+	}
+
+	.modal::-webkit-scrollbar-track{
+	background-color: #900;
+	border-radius: 2px;
+	
+	}
+.desplazar-modal{
+	animation: moverModal .6s forwards;
+}
+
+.ocultar-scroll{
+	
+}
+
+@keyframes moverModal{
+	0%{
+		
+	}
+
+	100%{
+		margin-left: 0px;
+	}
+}
+
+.titulo-modal{
+	border-bottom: 2px solid #900;
+	padding: 20px 10px 10px 10px;
+	display: flex;
+
+
+}
+
+.titulo-modal h3{
+	font-family: Carter One, verdana;
+	width: 120px;
+	text-align: left;
+	font-size: 22px;
+}
+
+.titulo-modal div{
+	transform: translateX(170px);
+	margin-top: -10px;
+	font-size: 30px;
+}
+
+
+.icono-x img{
+	width: 30px;
+	height: 30px;
+	filter: invert(100%);
+}
+
+.generos-responsive button, .populares-responsive button{
+	margin-left: 30px;
+	text-align: left;
+	color: #fff;
+	font-family: verdana;
+	background-color: inherit;
+	font-size: 12px;
+	width: 160px;
+	border-radius: 3px;
+	padding: 10px 5px;
+	margin-bottom: 5px;
+	border: none;
+}
+.generos-responsive button:focus, .populares-responsive button:focus{
+	border: 1px solid #900;
+	color: #fd0;
+}
+
+.generos-responsive h3, .populares-responsive h3{
+	padding-left: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #900;
+	padding-bottom: 3px;
+	font-size: 15px;
+
+
+}
+.generos-responsive{
+	display: flex;
+	flex-direction: column;
+}
+
+.populares-responsive{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+/*VENTANA DE BUSQUEDA DE SERIES RESPONSIVE*/
+.lista-de-series-responsive{
+	display: none;
+	text-align: center;
+	visibility: hidden;
+	color: #f07;
+	height: 120px;
+	width: 200px;
+	margin-top: 10px;
+	background-color: #400;
+	border-radius: 5px;
+}
+
+.item-ul-responsive{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	overflow-y: scroll;
+	height: 110px;
+	width: 190px;
+	
+}
+
+.item-ul-responsive::-webkit-scrollbar{
+	width: 5px;
+	height: 5px;
+	
+}
+
+.item-ul-responsive::-webkit-scrollbar-thumb{
+	background-color: #999;
+	border-radius: 2px;
+}
+
+.item-ul-responsive::-webkit-scrollbar-track{
+	background-color: #000;
+	border-radius: 2px;
+	margin: 5px;
+}
+
+.lista-de-series-responsive:hover{
+	visibility: visible;
+}
+
+.lista-de-series-responsive button{
+	border: none;
+	width: 165px;
+	height: 50px;
+	color: #fff;
+	background: linear-gradient(to right, #000, #400);
+	padding: 0px 15px;
+	font-size: 10px;
+	padding: 5px;
+	margin: auto;
+	text-align: left;
+	border-radius: 5px;
+	margin-bottom: 7px;
+}
+
+.lista-de-series-responsive button:hover{
+	cursor: pointer;
+	animation: animacionUl .5s forwards;
+}
+
+@keyframes animacionUl{
+	0%{
+
+	}
+
+	100%{
+		color: #fd0;
+	}
+}
+
+.series-responsive{
+	display: flex;
+}
+
+.img-ul-responsive{
+	width: 26%;
+	height: 35px;
+	margin-right: 10px;
+}
+
+.text-ul-responsive{
+	width: 74%;
+	margin-top: 6px;
+}
+
+.series-responsive img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 3px;
+}
+
+.input-buscador-responsive:focus-within + ul{
+	animation: desplayblock .3s forwards;
+	visibility: visible;
+
+}
+
+@keyframes desplayblock{
+	0%{
+		transform: scale(.9);
+	}
+
+	80%{
+		transform: scale(1.1)
+	}
+
+	100%{
+		transform: scale(1)
+	}
+}
+
+.filtro-responsive{
+	display: none;
+}
+
+
+
+
+/*FLECHAS DE PORTADA RESPONSIVE*/
+.botones-portada-responsive button{
+	font-size: 15px;
+	border-radius: 2px;
+	border: 1px solid #ddd;
+	z-index: 100;
+	text-align: center;
+	background-color: inherit;
+	color: #fff;
+}
+
+.botones-portada-responsive button:hover{
+	cursor: pointer;
+}
+
+.botones-portada-responsive button:nth-child(1){
+	padding: 1px 6px 1px 3px;
+}
+.botones-portada-responsive button:nth-child(2){
+	padding: 1px 3px 1px 6px;
+}
+
+.botones-portada-responsive button:active{
+	cursor: pointer;
+	background-color: #fff;
+	color: #400;
+	opacity: .5;
+}
+.botones-portada-responsive button:nth-child(1){
+	margin-left: 125px;
+}
+.botones-portada-responsive button:nth-child(2){
+	margin-left: 80px;
+}
+
+.subtitulo-responsive{
+	display: none;
+	margin-left: 20px;
+	border-left: 2px solid #400;
+	padding: 5px;
+	width: 300px;
+	
+}
+.subtitulo-responsive h2{
+	font-size: 15px;
+}
+
+.titulo-redes{
+	display: none;
+	margin: 12px 5px 0px 0px;
+}
+
+
+.aside-responsive{
+	display: none;
+	width: 425px;
+	transform: translateY(-380px);
+	
+	
+}
+
+.titulo-aside-responsive{
+	margin-left: 10px;
+	border-left: 2px solid #900;
+	padding-left: 5px;
+	background: linear-gradient(to right, #777, transparent);
+	height: 23px;
+	width: 410px;
+	color: #fd0;
+	font-family: Carter One, verdana;
+}
+
+.item-aside-responsive{
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	width: 407px;
+	height: 180px;
+	border-radius: 3px;
+	background: linear-gradient(70deg, #000, #a00);
+}
+
+.item-aside-responsive img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 3px;
+}
+
+
+
+.agrandar-aside-responsive{
+	animation: agrandarImgAsideResponsive .2s forwards;
+	
+}
+
+@keyframes agrandarImgAsideResponsive{
+	0%{
+
+	}
+	100%{
+		transform: scale(1.07);
+	}
+}
+
+.item-aside-responsive h4{
+	transform: translateY(-50px);
+	margin-left: 10px;
+	position: relative;
+	z-index: 10;
+}
+
+.item-aside-responsive p{
+	transform: translateY(-48px);
+	margin-left: 10px;
+	font-size: 13px;
+	position: relative;
+	z-index: 10;
+	color: #ccc;
+
+}
+
+.item-aside-responsive div{
+	width: 407px;
+	height: 110px;
+	background: linear-gradient(to top, #000, transparent);
+	transform: translateY(-135px);
+
+}
+
+
+/*DISEÑO RESPONSIVE PARA PANTALLAS 425PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 425PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 425PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 425PX*/
+@media only screen and (max-width: 440px){
+	.botones-portada-responsive{
+		display: block;
+		transform: translateY(-255px);
+		margin-left: 17px;
+	}
+	
+
+	.barra-de-navegacion-responsive{
+		transform: translateY(-660px);
+		display: block;
+		display: flex;
+		padding-top: 10px;
+		position: fixed;
+	}
+
+	.modal{
+		transform: translateY(-660px);
+	}
+
+	.icono-de-inicio-responsive{
+		transform: translateX(200px);
+		
+	}
+	.body::-webkit-scrollbar{
+		width: 3px;
+		height: 3px;
+	}
+	.body::-webkit-scrollbar-thumb{
+		background-color: #777;
+		border-radius: 2px;
+	}
+
+	.body::-webkit-scrollbar-track{
+		background-color: #000;
+		border-radius: 2px;
+	}
+	.barra-de-navegacion, .ventanas{
+		display: none;
+	}
+
+	.input{
+		margin-top: 10px;
+		margin-bottom: 5px;
+		transform: translateX(10px);
+	}
+	.input input{
+		width: 150px;
+		padding: 3px 0px 5px 7px;
+		font-size: 12px;
+		background-color: #533;
+		border: 1px solid #600;
+		outline: none;
+	}
+	.input input:focus{
+		outline: 2px solid #900;
+		animation: agrandarInputResponsive .5s forwards;
+		
+	}
+	@keyframes agrandarInputResponsive{
+		0%{
+
+		}
+		100%{
+			width: 220px;
+		}
+	}
+	.buscador-responsive{
+		transform: translateY(-3px);
+	}
+
+	.lista-de-series-responsive{
+		display: block;
+	}
+		
+	.informacion{
+		margin-left: 15px;
+		transform: translateY(100px);
+		margin-bottom: 120px; 
+		width: 395px;
+		display: flex;
+
+	}
+
+	.informacion-de-anime{
+		margin-left: 10px;
+		width: 65%;
+		height: 300px;
+	}
+
+	.foto-poster{
+		width: 35%;
+	}
+
+	.informacion-de-anime h2{
+ 		font-size: 23px;
+ 		
+	}
+
+	.informacion-de-anime p:nth-child(5){
+		
+ 		padding: 10px 0px;
+ 		font-size: 12px;
+	}
+
+	.informacion-de-anime p:nth-child(2){
+ 		padding: 10px 0px;
+ 		font-size: 12px;
+	}
+
+	.informacion-de-anime p:nth-child(3){
+ 		padding: 0px;
+ 		padding-top: 5px;
+ 		font-size: 12px;
+ 		margin-bottom: 10px;
+
+ 		
+	}
+	.informacion-de-anime p:nth-child(4){
+		
+ 		padding: 0px 0px;
+ 		font-size: 12px;
+	}
+
+	.informacion-de-anime a{
+		display: none;
+	}
+	
+.avisos, .aside{
+		display: none;
+	}
+	
+	.supremo{
+		margin: 120px 10px 0px 10px;
+		width: 425px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.main{
+		width: 410px;
+		padding: 10px;
+		margin-top: 10px;
+	
+	}
+	
+	.titulo-redes{
+		display: block;
+	}
+
+	.redes-sociales{
+		display: flex;
+		flex-direction: row;
+		margin-left: 13px;
+		width: 100vh;
+	}
+
+	.redes-sociales img{
+		margin-right: 7px;
+
+	}
+
+	
+
+	.botones-portada{
+		display: none;
+	}
+
+	.portada-container{
+		width: 425px;
+		height: 200px;
+		margin-left: 2px;
+	
+	}
+
+
+	.imagen-portada{
+		width: 425px;
+		height: 240px;
+	
+	}
+	
+	.sombra1{
+		transform: translateY(-250px);
+		width: 425px;
+		height: 50px;
+	}
+	.sombra2{
+		transform: translateY(-130px);
+		width: 425px;
+		height: 50px;
+	}
+
+	.botones-portada-responsive{
+		display: block;
+		transform: translateY(5px);
+		margin-left: 15px;
+	}
+
+	.puntos{
+		margin-left: 165px;
+		transform: translateY(-40px);
+	}
+
+	.supremo{
+		transform: translateY(-100px);
+		width: 380px;
+		margin-left: 0px;
+		margin-right: 0px;
+		
+		
+	}
+	.main{
+		width: 100%;
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	.div-grid-h2 h2{
+		font-size: 25px;
+	}
+	.poster-temporada{
+		width: 35%;
+		height: 190px;
+	}
+
+	.info-temporada{
+		width: 65%;
+		margin-left: 10px;
+	}
+	.info-temporada p{
+		padding-top: 2px;
+		padding-bottom: 2px;
+		font-size: 11px;
+	}
+	.info-temporada h3{
+		margin-bottom: 5px;
+		font-size: 20px;
+	}
+	.info-temporada p:nth-child(3){
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+	}
+
+	.info-temporada p:nth-child(5){
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+	}
+
+	.info-temporada p:nth-child(7){
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+	}
+
+	.info-temporada button{
+		padding: 3px 10px;
+		font-size: 11px;
+		margin-top: 8px;
+	}
+
+	.pie-de-temporada p{
+		font-size: 10px;
+	}
+
+	.pie-de-temporada p:nth-child(1){
+		display: none;
+	}
+	.pie-de-temporada p:nth-child(3){
+		font-size: 11px;
+		margin-top: -5px;
+	}
+	
+	.aside-responsive{
+		display: block;
+		margin-top: 200px;
+
+
+	}
+	
+	.parrafo-final{
+		width: 410px;
+		font-size: 12px;
+		border-left: 2px solid #900;
+		margin-left: 10px;
+		transform: translateY(-200px);
+	}
+
+
+	.footer{
+		width: 100vh;
+		height: 150px;
+		display: flex;
+		flex-direction: column;
+
+		
+	
+	}
+	.footer-parrafo{
+		text-align: center;
+		font-family: verdana;
+		color: #b00;
+		font-size: 10px;
+		transform: translateY(10px);
+	}
+
+	.logo-de-cuevana{
+		transform: translateY(-20px);
+		margin: auto;
+		height: 30px;
+
+	}
+
+	
+	.iconos-de-footer{
+		display: flex;
+		margin: auto;
+		margin-top: -50px;
+		transform: translateX(0px);
+		position: relative;
+	}
+
+	.iconos-de-footer img{
+		margin-right: 10px;
+		width: 30px;
+		height: 30px;
+	
+	}
+
+}
+
+
+/*DISEÑO RESPONSIVE PARA PANTALLAS 390PX*/
+@media only screen and (max-width: 400px){
+
+	.barra-de-navegacion-responsive{
+		width: 100vh;
+		transform: translateY(-660px);
+	}
+	.logo-living-responsive{
+		transform: translateX(85px);
+	}
+	.icono-de-inicio-responsive{
+		transform: translateX(165px);
+		
+	}
+
+	.modal{
+		transform: translateY(-660px);
+	}
+	
+	.informacion{
+		margin-left: 15px;
+		transform: translateY(100px);
+		margin-bottom: 120px; 
+		width: 360px;
+		display: flex;
+
+	}
+
+	.informacion-de-anime{
+		margin-left: 10px;
+		width: 62%;
+		height: 300px;
+	}
+
+	.foto-poster{
+		width: 38%;
+	}
+
+	.informacion-de-anime h2{
+ 		font-size: 20px;
+	}
+
+	.informacion-de-anime p:nth-child(5){
+		
+ 		font-size: 11px;
+	}
+
+	.informacion-de-anime p:nth-child(2){
+ 		padding: 5px 0px;
+ 		font-size: 11px;
+	}
+
+	.informacion-de-anime p:nth-child(3){
+ 		
+ 		font-size: 11px;
+ 		
+	}
+	.informacion-de-anime p:nth-child(4){
+		
+ 		font-size: 11px;
+	}
+
+	.portada-container{
+		width: 390px;
+		height: 200px;
+		margin-left: 2px;
+	
+	}
+
+
+	.imagen-portada{
+		width: 390px;
+		height: 240px;
+	
+	}
+	
+	
+		
+		.botones-portada-responsive{
+			display: block;
+			
+			margin-left: 0px;
+		}
+
+		.puntos{
+			
+			margin-left: 155px;
+		}
+		
+		.container-redes-sociales{
+			width: 380px;
+			margin-left: -10px;
+
+		}
+
+	.supremo{
+		transform: translateY(-100px);
+		width: 360px;
+		margin-left: 0px;
+		margin-right: 0px;
+		
+		
+	}
+	.main{
+		width: 100%;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	
+	
+
+		.aside-responsive{
+			
+			width: 380px;
+			transform: translateY(-380px);
+		}
+
+		.titulo-aside-responsive{
+			margin-left: 10px;
+			width: 390px;
+			
+			
+		}
+
+		.item-aside-responsive{
+			width: 370px;
+			height: 160px;
+			transform: translateX(2px);
+
+		}
+
+		.footer{
+			width: 390px;
+		}
+		.parrafo-final{
+			width: 380px;
+		}
+
+		
+	
+
+}
+
+/*DISEÑO RESPONSIVE PARA PANTALLAS 375PX*/	
+/*DISEÑO RESPONSIVE PARA PANTALLAS 375PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 375PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 375PX*/
+@media only screen and (max-width: 385px){
+	.barra-de-navegacion-responsive{
+		width: 100vh;
+		transform: translateY(-662px);
+	}
+	.logo-living-responsive{
+		transform: translateX(80px);
+	}
+
+	.icono-de-inicio-responsive{
+		transform: translateX(150px);
+		
+	}
+
+	.modal{
+		transform: translateY(-662px);
+	}
+
+	
+	.informacion{
+		margin-left: 15px;
+		transform: translateY(100px);
+		margin-bottom: 120px; 
+		width: 345px;
+		display: flex;
+
+	}
+
+	.informacion-de-anime{
+		margin-left: 10px;
+		width: 62%;
+		height: 300px;
+	}
+
+	.foto-poster{
+		width: 38%;
+		height: 200px;
+	}
+
+	.informacion-de-anime h2{
+ 		font-size: 20px;
+	}
+
+	.informacion-de-anime p:nth-child(5){
+		
+ 		font-size: 11px;
+	}
+
+	.informacion-de-anime p:nth-child(2){
+ 		padding: 5px 0px;
+ 		font-size: 11px;
+	}
+
+	.informacion-de-anime p:nth-child(3){
+ 		
+ 		font-size: 11px;
+ 		
+	}
+	.informacion-de-anime p:nth-child(4){
+		
+ 		font-size: 11px;
+	}
+
+	.portada-container{
+		width: 375px;
+		height: 200px;
+		margin-left: 2px;
+	
+	}
+
+
+	.imagen-portada{
+		width: 375px;
+		height: 220px;
+	
+	}
+	
+	.sombra1{
+		transform: translateY(-250px);
+		width: 425px;
+		height: 50px;
+	}
+	.sombra2{
+		transform: translateY(-110px);
+		width: 425px;
+		height: 50px;
+	}
+	
+		
+		.botones-portada-responsive{
+			display: block;
+			
+			margin-left: -5px;
+		}
+
+		.puntos{
+			
+			margin-left: 148px;
+		}
+		
+		.container-redes-sociales{
+			width: 380px;
+			margin-left: -15px;
+
+		}
+
+	.supremo{
+		transform: translateY(-100px);
+		width: 355px;
+		margin-left: 0px;
+		margin-right: 0px;
+		
+		
+	}
+	.main{
+		width: 100%;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+
+		.aside-responsive{
+			
+			width: 365px;
+			transform: translateY(-380px);
+		}
+
+		.titulo-aside-responsive{
+			margin-left: 10px;
+			width: 375px;
+			
+			
+		}
+
+		.item-aside-responsive{
+			width: 350px;
+			height: 150px;
+			transform: translateX(4px);
+
+		}
+
+		.footer{
+			width: 375px;
+		}
+
+		.parrafo-final{
+			width: 360px;
+		}
+
+		
+	
+}
+
+/*DISEÑO RESPONSIVE PARA PANTALLAS 360PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 360PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 360PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 360PX*/
+@media only screen and (max-width: 370px){
+	.barra-de-navegacion-responsive{
+		width: 100vh;
+		transform: translateY(-662px);
+	}
+	.logo-living-responsive{
+		transform: translateX(75px);
+		margin-top: 5px;
+	}
+
+	.icono-de-inicio-responsive{
+		transform: translateX(135px);
+		
+	}
+
+	.modal{
+		transform: translateY(-662px);
+	}
+
+	
+	.informacion{
+		margin-left: 15px;
+		transform: translateY(100px);
+		margin-bottom: 120px; 
+		width: 335px;
+		display: flex;
+
+	}
+
+	.informacion-de-anime{
+		margin-left: 10px;
+		width: 62%;
+		height: 300px;
+	}
+
+	.foto-poster{
+		width: 38%;
+		height: 200px;
+	}
+
+	.informacion-de-anime h2{
+ 		font-size: 20px;
+	}
+
+	.informacion-de-anime p:nth-child(5){
+		
+ 		font-size: 10.5px;
+	}
+
+	.informacion-de-anime p:nth-child(2){
+ 		padding: 5px 0px;
+ 		font-size: 10.5px;
+	}
+
+	.informacion-de-anime p:nth-child(3){
+ 		
+ 		font-size: 10.5px;
+ 		
+	}
+	.informacion-de-anime p:nth-child(4){
+		
+ 		font-size: 10.5px;
+	}
+
+	.portada-container{
+		width: 360px;
+		height: 200px;
+		margin-left: 2px;
+	
+	}
+
+
+	.imagen-portada{
+		width: 360px;
+		height: 205px;
+	
+	}
+	
+	.sombra1{
+		transform: translateY(-250px);
+		width: 360px;
+		height: 50px;
+	}
+	.sombra2{
+		transform: translateY(-95px);
+		width: 360px;
+		height: 50px;
+	}
+	
+		
+		.botones-portada-responsive{
+			display: block;
+			
+			margin-left: -10px;
+		}
+
+		.puntos{
+			
+			margin-left: 143px;
+		}
+		
+		.container-redes-sociales{
+			width: 380px;
+			margin-left: -15px;
+
+		}
+
+	.supremo{
+		transform: translateY(-100px);
+		width: 345px;
+		margin-left: 0px;
+		margin-right: 0px;
+		
+		
+	}
+	.main{
+		width: 100%;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+		.aside-responsive{
+			
+			width: 360px;
+			transform: translateY(-380px);
+		}
+
+		.titulo-aside-responsive{
+			margin-left: 10px;
+			width: 350px;
+			
+			
+		}
+
+		.item-aside-responsive{
+			width: 340px;
+			height: 150px;
+			transform: translateX(0px);
+
+		}
+
+		.footer{
+			width: 360px;
+		}
+
+		
+	
+
+	.parrafo-final{
+		width: 350px;
+	}
+}
+
+
+/*DISEÑO RESPONSIVE PARA PANTALLAS 320PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 320PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 320PX*/
+/*DISEÑO RESPONSIVE PARA PANTALLAS 320PX*/
+@media only screen and (max-width: 340px){
+	.barra-de-navegacion-responsive{
+		width: 100vh;
+		transform: translateY(-559px);
+	}
+	.logo-living-responsive{
+		transform: translateX(55px);
+	}
+
+	.icono-de-inicio-responsive{
+		transform: translateX(98px);
+		
+	}
+
+	.modal{
+		transform: translateY(-559px);
+		width: 310px;
+		height: 450px;
+	
+	}
+	
+
+	.titulo-modal div{
+		transform: translateX(150px);
+		
+	}
+	.titulo-modal h3{
+		font-family: Carter One, verdana;
+		width: 110px;
+		text-align: left;
+		font-size: 21px;
+	}
+
+	
+	.informacion{
+		margin-left: 15px;
+		transform: translateY(100px);
+		margin-bottom: 60px; 
+		width: 295px;
+		display: flex;
+
+	}
+
+	.informacion-de-anime{
+		margin-left: 10px;
+		width: 62%;
+		height: 300px;
+	}
+
+	.foto-poster{
+		width: 38%;
+		height: 200px;
+	}
+
+	.informacion-de-anime h2{
+ 		font-size: 18px;
+	}
+
+	.informacion-de-anime p:nth-child(5){
+		
+ 		font-size: 10px;
+	}
+
+	.informacion-de-anime p:nth-child(2){
+ 		padding: 5px 0px;
+ 		font-size: 10px;
+	}
+
+	.informacion-de-anime p:nth-child(3){
+ 		
+ 		font-size: 10px;
+ 		
+	}
+	.informacion-de-anime p:nth-child(4){
+		
+ 		font-size: 10px;
+	}
+
+	.portada-container{
+		width: 320px;
+		height: 160px;
+		margin-left: 2px;
+	
+	}
+
+
+	.imagen-portada{
+		width: 320px;
+		height: 185px;
+	
+	}
+	
+	.sombra1{
+		transform: translateY(-220px);
+		width: 360px;
+		height: 50px;
+	}
+	.sombra2{
+		transform: translateY(-105px);
+		width: 360px;
+		height: 50px;
+	}
+	
+		
+		.botones-portada-responsive{
+			display: block;
+			
+			margin-left: -25px;
+		}
+
+		.puntos{
+			
+			margin-left: 128px;
+		}
+		
+		.container-redes-sociales{
+			width: 380px;
+			margin-left: -20px;
+
+		}
+
+	.supremo{
+		transform: translateY(-100px);
+		width: 310px;
+		margin-left: 0px;
+		margin-right: 0px;
+		
+		
+	}
+	.main{
+		width: 100%;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.div-grid-h2 h2{
+		font-size: 25px;
+	}
+	.poster-temporada{
+		width: 40%;
+		height: 190px;
+	}
+
+	.info-temporada{
+		width: 60%;
+		margin-left: 10px;
+	}
+	.info-temporada p{
+		padding-top: 2px;
+		padding-bottom: 2px;
+		font-size: 10px;
+	}
+	.info-temporada h3{
+		margin-bottom: 5px;
+		font-size: 17px;
+	}
+	
+
+	.info-temporada button{
+		padding: 3px 10px;
+		font-size: 11px;
+		margin-top: 8px;
+	}
+
+	.pie-de-temporada p{
+		font-size: 10px;
+	}
+
+	.pie-de-temporada p:nth-child(1){
+		display: none;
+	}
+	.pie-de-temporada p:nth-child(3){
+		font-size: 10px;
+		margin-top: -5px;
+	}
+		.aside-responsive{
+			
+			width: 320px;
+			transform: translateY(-380px);
+		}
+
+		.titulo-aside-responsive{
+			margin-left: 5px;
+			width: 320px;
+			
+			
+		}
+
+		.item-aside-responsive{
+			width: 308px;
+			height: 150px;
+			transform: translateX(0px);
+
+		}
+
+		.parrafo-final{
+			width: 310px;
+			margin-left: 5px;
+		}
+
+		.footer{
+			width: 320px;
+		}
+
+		
+		
+	}
+
+
+
+
+
+
+
